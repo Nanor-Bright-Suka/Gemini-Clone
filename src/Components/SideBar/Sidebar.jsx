@@ -29,16 +29,18 @@ const Sidebar = () => {
         extended ? 
         <div className='flex flex-col mt-2'>
         <p className='m-2'>Recent</p>
+        <div className='overflow-y-scroll h-56'>  
         {prevPrompt.map((item,index) => {
           return (
-        <div className='flex gap-3 
-         hover:bg-[#e6eaf1] px-2 
-         py-3 rounded-md h-52 ' key={index} onClick={()=> loadPrompt(item)}> 
+        <div className='flex
+         hover:bg-[#e6eaf1] px-2 py-3  
+          rounded-md' key={index} onClick={()=> loadPrompt(item)}> 
         <img src={assets.message_icon} alt="Message Icon" className='w-[25px] h-[25px]'/>
-         <p>{item.slice(0,12)} ....</p> 
+         <p>{item.slice(0,30)} ....</p>
         </div>
           )
         })}
+        </div>
      </div> : null
       }
         
